@@ -6,3 +6,7 @@ __pycache__/
 data.json
 fetch_recall_data.py
 map.html
+
+node_modules/
+dist/
+.DS_Store
