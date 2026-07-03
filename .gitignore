@@ -1,3 +1,8 @@
 .env
 .venv/
 __pycache__/
+
+# Phase 4 - work in progress, not ready to push
+data.json
+fetch_recall_data.py
+map.html
