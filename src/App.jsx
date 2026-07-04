@@ -24,85 +24,1765 @@ const MAP_CENTER = [18.5220, 73.8450];
 
 const INITIAL_SEGMENTS = [
   {
-    id: 'seg_jmroad',
-    name: 'JM Road (Sambhaji Park side)',
-    coordinates: [[18.52545,73.84762],[18.52573,73.84777],[18.52603,73.84723],[18.52621,73.84664],[18.52632,73.84586],[18.52638,73.84499],[18.52717,73.84499],[18.52716,73.8458],[18.52798,73.84578]],
-    grid_cell: '18.526,-73.847'
+    "id": "seg_01",
+    "name": "FC Road near Fergusson College gate",
+    "coordinates": [
+      [
+        18.52387,
+        73.83934
+      ],
+      [
+        18.52399,
+        73.83932
+      ],
+      [
+        18.52408,
+        73.83924
+      ],
+      [
+        18.52423,
+        73.83922
+      ],
+      [
+        18.52474,
+        73.8393
+      ],
+      [
+        18.52462,
+        73.84027
+      ],
+      [
+        18.52456,
+        73.84134
+      ],
+      [
+        18.52622,
+        73.84182
+      ],
+      [
+        18.52819,
+        73.84287
+      ],
+      [
+        18.52848,
+        73.84306
+      ],
+      [
+        18.52839,
+        73.84336
+      ],
+      [
+        18.52839,
+        73.84347
+      ]
+    ],
+    "grid_cell": "18.5259,73.8415"
   },
   {
-    id: 'seg_fcroad',
-    name: 'FC Road (near Goodluck Cafe)',
-    coordinates: [[18.52147,73.8425],[18.52154,73.84336],[18.5214,73.84401],[18.52214,73.84424],[18.52244,73.84324],[18.52255,73.84251],[18.52261,73.84171],[18.52345,73.84184]],
-    grid_cell: '18.522,-73.842'
+    "id": "seg_02",
+    "name": "JM Road by the Shivaji Nagar crossing",
+    "coordinates": [
+      [
+        18.5292,
+        73.84579
+      ],
+      [
+        18.53107,
+        73.84579
+      ],
+      [
+        18.53137,
+        73.8446
+      ],
+      [
+        18.53155,
+        73.84479
+      ],
+      [
+        18.5309,
+        73.8473
+      ],
+      [
+        18.53082,
+        73.84743
+      ],
+      [
+        18.53225,
+        73.84787
+      ],
+      [
+        18.53238,
+        73.84801
+      ],
+      [
+        18.53255,
+        73.84826
+      ],
+      [
+        18.53286,
+        73.84901
+      ],
+      [
+        18.53312,
+        73.85007
+      ],
+      [
+        18.53321,
+        73.85006
+      ],
+      [
+        18.53322,
+        73.8501
+      ]
+    ],
+    "grid_cell": "18.5312,73.8481"
   },
   {
-    id: 'seg_apteroad',
-    name: 'Apte Road (quiet stretch)',
-    coordinates: [[18.52511,73.84402],[18.52518,73.84358],[18.52476,73.84349],[18.52489,73.84279],[18.52664,73.84314],[18.52676,73.84258]],
-    grid_cell: '18.525,-73.843'
+    "id": "seg_03",
+    "name": "MG Road near the Camp market",
+    "coordinates": [
+      [
+        18.51564,
+        73.87615
+      ],
+      [
+        18.51569,
+        73.87607
+      ],
+      [
+        18.51572,
+        73.87567
+      ],
+      [
+        18.51665,
+        73.87505
+      ],
+      [
+        18.51857,
+        73.87433
+      ],
+      [
+        18.51978,
+        73.87409
+      ],
+      [
+        18.52004,
+        73.87409
+      ],
+      [
+        18.51808,
+        73.88044
+      ],
+      [
+        18.51802,
+        73.8807
+      ],
+      [
+        18.51803,
+        73.8809
+      ],
+      [
+        18.51829,
+        73.88107
+      ],
+      [
+        18.51938,
+        73.88151
+      ],
+      [
+        18.51998,
+        73.88036
+      ]
+    ],
+    "grid_cell": "18.5177,73.8782"
+  },
+  {
+    "id": "seg_04",
+    "name": "Baner Road near Balewadi connector",
+    "coordinates": [
+      [
+        18.56157,
+        73.77978
+      ],
+      [
+        18.56155,
+        73.77953
+      ],
+      [
+        18.56415,
+        73.77944
+      ],
+      [
+        18.56415,
+        73.77872
+      ],
+      [
+        18.56423,
+        73.77872
+      ],
+      [
+        18.56419,
+        73.78114
+      ],
+      [
+        18.5638,
+        73.78246
+      ],
+      [
+        18.56357,
+        73.78289
+      ],
+      [
+        18.56373,
+        73.78288
+      ],
+      [
+        18.56407,
+        73.78266
+      ],
+      [
+        18.56456,
+        73.78254
+      ],
+      [
+        18.56458,
+        73.78248
+      ],
+      [
+        18.56466,
+        73.78247
+      ],
+      [
+        18.56471,
+        73.78254
+      ],
+      [
+        18.56463,
+        73.78262
+      ],
+      [
+        18.56467,
+        73.78401
+      ],
+      [
+        18.5654,
+        73.78403
+      ],
+      [
+        18.56541,
+        73.78372
+      ],
+      [
+        18.5655,
+        73.78372
+      ]
+    ],
+    "grid_cell": "18.5635,73.7818"
+  },
+  {
+    "id": "seg_05",
+    "name": "Koregaon Park Main Avenue",
+    "coordinates": [
+      [
+        18.5342,
+        73.89368
+      ],
+      [
+        18.53455,
+        73.8937
+      ],
+      [
+        18.53455,
+        73.89487
+      ],
+      [
+        18.5346,
+        73.89496
+      ],
+      [
+        18.53587,
+        73.89511
+      ],
+      [
+        18.53653,
+        73.8953
+      ],
+      [
+        18.5366,
+        73.89719
+      ],
+      [
+        18.53821,
+        73.89724
+      ]
+    ],
+    "grid_cell": "18.5362,73.8956"
+  },
+  {
+    "id": "seg_06",
+    "name": "Senapati Bapat Road near university lane",
+    "coordinates": [
+      [
+        18.5348,
+        73.82674
+      ],
+      [
+        18.53452,
+        73.82673
+      ],
+      [
+        18.53451,
+        73.82621
+      ],
+      [
+        18.53301,
+        73.82627
+      ],
+      [
+        18.53297,
+        73.82878
+      ],
+      [
+        18.53473,
+        73.82886
+      ],
+      [
+        18.53472,
+        73.83009
+      ],
+      [
+        18.53752,
+        73.83016
+      ],
+      [
+        18.53968,
+        73.82966
+      ],
+      [
+        18.53969,
+        73.82976
+      ],
+      [
+        18.53901,
+        73.82997
+      ],
+      [
+        18.53903,
+        73.8302
+      ],
+      [
+        18.53866,
+        73.83044
+      ]
+    ],
+    "grid_cell": "18.5368,73.8287"
+  },
+  {
+    "id": "seg_07",
+    "name": "Kalyani Nagar riverside access road",
+    "coordinates": [
+      [
+        18.54619,
+        73.904
+      ],
+      [
+        18.54619,
+        73.90394
+      ],
+      [
+        18.54626,
+        73.90395
+      ],
+      [
+        18.54597,
+        73.906
+      ],
+      [
+        18.5478,
+        73.90592
+      ],
+      [
+        18.55006,
+        73.90564
+      ],
+      [
+        18.55176,
+        73.90583
+      ],
+      [
+        18.55235,
+        73.90594
+      ],
+      [
+        18.55226,
+        73.90816
+      ],
+      [
+        18.55189,
+        73.90825
+      ],
+      [
+        18.5509,
+        73.90813
+      ],
+      [
+        18.55082,
+        73.90785
+      ]
+    ],
+    "grid_cell": "18.5482,73.9060"
+  },
+  {
+    "id": "seg_08",
+    "name": "Shivaji Nagar station approach road",
+    "coordinates": [
+      [
+        18.52823,
+        73.84951
+      ],
+      [
+        18.52857,
+        73.85007
+      ],
+      [
+        18.52984,
+        73.8498
+      ],
+      [
+        18.53017,
+        73.84964
+      ],
+      [
+        18.53137,
+        73.8446
+      ],
+      [
+        18.5366,
+        73.85006
+      ],
+      [
+        18.5369,
+        73.85072
+      ],
+      [
+        18.53585,
+        73.85099
+      ],
+      [
+        18.53448,
+        73.8517
+      ],
+      [
+        18.53353,
+        73.85237
+      ],
+      [
+        18.53206,
+        73.85365
+      ]
+    ],
+    "grid_cell": "18.5301,73.8517"
+  },
+  {
+    "id": "seg_09",
+    "name": "Aundh ITI road stretch",
+    "coordinates": [
+      [
+        18.5589,
+        73.80652
+      ],
+      [
+        18.55962,
+        73.8064
+      ],
+      [
+        18.55992,
+        73.80653
+      ],
+      [
+        18.56047,
+        73.80654
+      ],
+      [
+        18.56053,
+        73.8074
+      ],
+      [
+        18.56249,
+        73.80743
+      ],
+      [
+        18.56242,
+        73.80965
+      ],
+      [
+        18.56311,
+        73.80994
+      ],
+      [
+        18.56323,
+        73.81003
+      ]
+    ],
+    "grid_cell": "18.5609,73.8085"
+  },
+  {
+    "id": "seg_10",
+    "name": "Kothrud Paud Road by the bus stop cluster",
+    "coordinates": [
+      [
+        18.50541,
+        73.80599
+      ],
+      [
+        18.50719,
+        73.80594
+      ],
+      [
+        18.50701,
+        73.80422
+      ],
+      [
+        18.50705,
+        73.80415
+      ],
+      [
+        18.50713,
+        73.80415
+      ],
+      [
+        18.50716,
+        73.8042
+      ],
+      [
+        18.50751,
+        73.8075
+      ],
+      [
+        18.50764,
+        73.80799
+      ],
+      [
+        18.50814,
+        73.80884
+      ],
+      [
+        18.50824,
+        73.80911
+      ],
+      [
+        18.50831,
+        73.80952
+      ],
+      [
+        18.50938,
+        73.80947
+      ]
+    ],
+    "grid_cell": "18.5074,73.8078"
   }
 ];
 
 const INITIAL_REPORTS = [
   {
-    report_id: "rpt_jmroad_day_00",
-    segment_id: "seg_jmroad",
-    time_bucket: "day",
-    timestamp: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(), // 1 day ago
-    signal: "Safe – high visibility, very crowded pedestrian traffic",
-    severity: "low",
-    note: "Very safe during the day, lots of students and shoppers.",
-    left_light: "Grab a snack at the street vendors, very active area!"
+    "report_id": "pune_01_01_morning",
+    "segment_id": "seg_01",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-20T02:36:00.000Z",
+    "signal": "Mostly safe, but one short blind corner near parked scooters",
+    "severity": "medium",
+    "note": "Mostly safe, but one short blind corner near parked scooters",
+    "left_light": "Stay safe out there!"
   },
   {
-    report_id: "rpt_jmroad_evening_01",
-    segment_id: "seg_jmroad",
-    time_bucket: "evening",
-    timestamp: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(), // 2 days ago
-    signal: "felt fine; storefronts were open and the block was busy",
-    severity: "low",
-    note: "All shops are lit up, good foot traffic.",
-    left_light: "Storefront lights illuminate the path nicely."
+    "report_id": "pune_01_02_morning",
+    "segment_id": "seg_01",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-20T02:37:00.000Z",
+    "signal": "Safe - high visibility, active pedestrian traffic",
+    "severity": "low",
+    "note": "Safe - high visibility, active pedestrian traffic",
+    "left_light": "Stay safe out there!"
   },
   {
-    report_id: "rpt_jmroad_night_02",
-    segment_id: "seg_jmroad",
-    time_bucket: "night",
-    timestamp: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(), // 3 days ago
-    signal: "one dark block near the park; I felt uneasy and took an auto",
-    severity: "high",
-    note: "Uneasy near the park boundary as it gets very dark.",
-    left_light: "Cross to the shop side of the street early, streetlights are better there."
+    "report_id": "pune_01_03_morning",
+    "segment_id": "seg_01",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-20T02:38:00.000Z",
+    "signal": "Well-lit and calm with lots of people around",
+    "severity": "low",
+    "note": "Well-lit and calm with lots of people around",
+    "left_light": "Stay safe out there!"
   },
   {
-    report_id: "rpt_fcroad_morning_03",
-    segment_id: "seg_fcroad",
-    time_bucket: "morning",
-    timestamp: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(), // 5 days ago
-    signal: "student traffic, lots of people, and clear sight lines; felt safe",
-    severity: "low",
-    note: "Busy with college kids and morning walkers.",
-    left_light: "Bustling morning energy here!"
+    "report_id": "pune_01_04_afternoon",
+    "segment_id": "seg_01",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-20T08:44:00.000Z",
+    "signal": "Felt safe; shops were open and the street was busy",
+    "severity": "low",
+    "note": "Felt safe; shops were open and the street was busy",
+    "left_light": "Stay safe out there!"
   },
   {
-    report_id: "rpt_fcroad_night_04",
-    segment_id: "seg_fcroad",
-    time_bucket: "night",
-    timestamp: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000).toISOString(), // 4 days ago
-    signal: "busy cafes are well-lit; no direct issues noticed",
-    severity: "low",
-    note: "Restaurants are open late, very comforting presence.",
-    left_light: "Walk near Goodluck Cafe, it's always active."
+    "report_id": "pune_01_05_afternoon",
+    "segment_id": "seg_01",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-20T08:45:00.000Z",
+    "signal": "Clear sight lines and steady foot traffic; comfortable walking",
+    "severity": "low",
+    "note": "Clear sight lines and steady foot traffic; comfortable walking",
+    "left_light": "Stay safe out there!"
   },
   {
-    report_id: "rpt_apteroad_night_05",
-    segment_id: "seg_apteroad",
-    time_bucket: "night",
-    timestamp: new Date(Date.now() - 75 * 24 * 60 * 60 * 1000).toISOString(), // 75 days ago (Stale!)
-    signal: "completely dark, couple of bikes speeding through",
-    severity: "high",
-    note: "Pitch black, felt extremely unsafe walking back late.",
-    left_light: "Avoid this path completely after sunset, walk around via FC Road instead."
+    "report_id": "pune_01_06_afternoon",
+    "segment_id": "seg_01",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-20T08:46:00.000Z",
+    "signal": "Generally fine, though traffic was moving quickly at the intersection",
+    "severity": "medium",
+    "note": "Generally fine, though traffic was moving quickly at the intersection",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_01_07_evening",
+    "segment_id": "seg_01",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-20T12:57:00.000Z",
+    "signal": "Some caution near the bus stop, but the block was active",
+    "severity": "medium",
+    "note": "Some caution near the bus stop, but the block was active",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_01_08_evening",
+    "segment_id": "seg_01",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-20T12:58:00.000Z",
+    "signal": "A little quieter, but lighting stayed good and I felt fine",
+    "severity": "low",
+    "note": "A little quieter, but lighting stayed good and I felt fine",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_01_09_night",
+    "segment_id": "seg_01",
+    "time_bucket": "night",
+    "timestamp": "2026-06-20T15:54:00.000Z",
+    "signal": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "severity": "high",
+    "note": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_01_10_night",
+    "segment_id": "seg_01",
+    "time_bucket": "night",
+    "timestamp": "2026-06-20T15:55:00.000Z",
+    "signal": "Felt okay because the road was lit and there was steady movement",
+    "severity": "medium",
+    "note": "Felt okay because the road was lit and there was steady movement",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_01_11_night",
+    "segment_id": "seg_01",
+    "time_bucket": "night",
+    "timestamp": "2026-06-20T15:56:00.000Z",
+    "signal": "Caution needed - one shadowed section and fast-moving vehicles",
+    "severity": "high",
+    "note": "Caution needed - one shadowed section and fast-moving vehicles",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_01_12_night",
+    "segment_id": "seg_01",
+    "time_bucket": "night",
+    "timestamp": "2026-06-20T15:57:00.000Z",
+    "signal": "Brighter than expected; security guards and other walkers nearby",
+    "severity": "medium",
+    "note": "Brighter than expected; security guards and other walkers nearby",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_02_01_morning",
+    "segment_id": "seg_02",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-21T02:36:00.000Z",
+    "signal": "Felt safe; shops were open and the street was busy",
+    "severity": "low",
+    "note": "Felt safe; shops were open and the street was busy",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_02_02_morning",
+    "segment_id": "seg_02",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-21T02:37:00.000Z",
+    "signal": "Safe - high visibility, active pedestrian traffic",
+    "severity": "low",
+    "note": "Safe - high visibility, active pedestrian traffic",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_02_03_morning",
+    "segment_id": "seg_02",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-21T02:38:00.000Z",
+    "signal": "Mostly safe, but one short blind corner near parked scooters",
+    "severity": "medium",
+    "note": "Mostly safe, but one short blind corner near parked scooters",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_02_04_afternoon",
+    "segment_id": "seg_02",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-21T08:44:00.000Z",
+    "signal": "Well-lit and calm with lots of people around",
+    "severity": "low",
+    "note": "Well-lit and calm with lots of people around",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_02_05_afternoon",
+    "segment_id": "seg_02",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-21T08:45:00.000Z",
+    "signal": "Felt safe; shops were open and the street was busy",
+    "severity": "low",
+    "note": "Felt safe; shops were open and the street was busy",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_02_06_afternoon",
+    "segment_id": "seg_02",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-21T08:46:00.000Z",
+    "signal": "Safe - high visibility, active pedestrian traffic",
+    "severity": "low",
+    "note": "Safe - high visibility, active pedestrian traffic",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_02_07_evening",
+    "segment_id": "seg_02",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-21T12:57:00.000Z",
+    "signal": "Still okay; several pedestrians and open storefronts",
+    "severity": "low",
+    "note": "Still okay; several pedestrians and open storefronts",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_02_08_evening",
+    "segment_id": "seg_02",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-21T12:58:00.000Z",
+    "signal": "Some caution near the bus stop, but the block was active",
+    "severity": "medium",
+    "note": "Some caution near the bus stop, but the block was active",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_02_09_night",
+    "segment_id": "seg_02",
+    "time_bucket": "night",
+    "timestamp": "2026-06-21T15:54:00.000Z",
+    "signal": "Brighter than expected; security guards and other walkers nearby",
+    "severity": "medium",
+    "note": "Brighter than expected; security guards and other walkers nearby",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_02_10_night",
+    "segment_id": "seg_02",
+    "time_bucket": "night",
+    "timestamp": "2026-06-21T15:55:00.000Z",
+    "signal": "Felt okay because the road was lit and there was steady movement",
+    "severity": "medium",
+    "note": "Felt okay because the road was lit and there was steady movement",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_02_11_night",
+    "segment_id": "seg_02",
+    "time_bucket": "night",
+    "timestamp": "2026-06-21T15:56:00.000Z",
+    "signal": "Felt okay because the road was lit and there was steady movement",
+    "severity": "medium",
+    "note": "Felt okay because the road was lit and there was steady movement",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_02_12_night",
+    "segment_id": "seg_02",
+    "time_bucket": "night",
+    "timestamp": "2026-06-21T15:57:00.000Z",
+    "signal": "Took care crossing because the block was dim and nearly empty",
+    "severity": "high",
+    "note": "Took care crossing because the block was dim and nearly empty",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_03_01_morning",
+    "segment_id": "seg_03",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-22T02:36:00.000Z",
+    "signal": "Mostly safe, but one short blind corner near parked scooters",
+    "severity": "medium",
+    "note": "Mostly safe, but one short blind corner near parked scooters",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_03_02_morning",
+    "segment_id": "seg_03",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-22T02:37:00.000Z",
+    "signal": "Mostly safe, but one short blind corner near parked scooters",
+    "severity": "medium",
+    "note": "Mostly safe, but one short blind corner near parked scooters",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_03_03_morning",
+    "segment_id": "seg_03",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-22T02:38:00.000Z",
+    "signal": "Generally fine, though traffic was moving quickly at the intersection",
+    "severity": "medium",
+    "note": "Generally fine, though traffic was moving quickly at the intersection",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_03_04_afternoon",
+    "segment_id": "seg_03",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-22T08:44:00.000Z",
+    "signal": "Clear sight lines and steady foot traffic; comfortable walking",
+    "severity": "low",
+    "note": "Clear sight lines and steady foot traffic; comfortable walking",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_03_05_afternoon",
+    "segment_id": "seg_03",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-22T08:45:00.000Z",
+    "signal": "Well-lit and calm with lots of people around",
+    "severity": "low",
+    "note": "Well-lit and calm with lots of people around",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_03_06_afternoon",
+    "segment_id": "seg_03",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-22T08:46:00.000Z",
+    "signal": "Well-lit and calm with lots of people around",
+    "severity": "low",
+    "note": "Well-lit and calm with lots of people around",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_03_07_evening",
+    "segment_id": "seg_03",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-22T12:57:00.000Z",
+    "signal": "Still okay; several pedestrians and open storefronts",
+    "severity": "low",
+    "note": "Still okay; several pedestrians and open storefronts",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_03_08_evening",
+    "segment_id": "seg_03",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-22T12:58:00.000Z",
+    "signal": "A little quieter, but lighting stayed good and I felt fine",
+    "severity": "low",
+    "note": "A little quieter, but lighting stayed good and I felt fine",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_03_09_night",
+    "segment_id": "seg_03",
+    "time_bucket": "night",
+    "timestamp": "2026-06-22T15:54:00.000Z",
+    "signal": "Took care crossing because the block was dim and nearly empty",
+    "severity": "high",
+    "note": "Took care crossing because the block was dim and nearly empty",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_03_10_night",
+    "segment_id": "seg_03",
+    "time_bucket": "night",
+    "timestamp": "2026-06-22T15:55:00.000Z",
+    "signal": "Felt okay because the road was lit and there was steady movement",
+    "severity": "medium",
+    "note": "Felt okay because the road was lit and there was steady movement",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_03_11_night",
+    "segment_id": "seg_03",
+    "time_bucket": "night",
+    "timestamp": "2026-06-22T15:56:00.000Z",
+    "signal": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "severity": "high",
+    "note": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_03_12_night",
+    "segment_id": "seg_03",
+    "time_bucket": "night",
+    "timestamp": "2026-06-22T15:57:00.000Z",
+    "signal": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "severity": "high",
+    "note": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_04_01_morning",
+    "segment_id": "seg_04",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-23T02:36:00.000Z",
+    "signal": "Generally fine, though traffic was moving quickly at the intersection",
+    "severity": "medium",
+    "note": "Generally fine, though traffic was moving quickly at the intersection",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_04_02_morning",
+    "segment_id": "seg_04",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-23T02:37:00.000Z",
+    "signal": "Felt safe; shops were open and the street was busy",
+    "severity": "low",
+    "note": "Felt safe; shops were open and the street was busy",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_04_03_morning",
+    "segment_id": "seg_04",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-23T02:38:00.000Z",
+    "signal": "Safe - high visibility, active pedestrian traffic",
+    "severity": "low",
+    "note": "Safe - high visibility, active pedestrian traffic",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_04_04_afternoon",
+    "segment_id": "seg_04",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-23T08:44:00.000Z",
+    "signal": "Clear sight lines and steady foot traffic; comfortable walking",
+    "severity": "low",
+    "note": "Clear sight lines and steady foot traffic; comfortable walking",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_04_05_afternoon",
+    "segment_id": "seg_04",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-23T08:45:00.000Z",
+    "signal": "Felt safe; shops were open and the street was busy",
+    "severity": "low",
+    "note": "Felt safe; shops were open and the street was busy",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_04_06_afternoon",
+    "segment_id": "seg_04",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-23T08:46:00.000Z",
+    "signal": "Felt safe; shops were open and the street was busy",
+    "severity": "low",
+    "note": "Felt safe; shops were open and the street was busy",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_04_07_evening",
+    "segment_id": "seg_04",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-23T12:57:00.000Z",
+    "signal": "A little quieter, but lighting stayed good and I felt fine",
+    "severity": "low",
+    "note": "A little quieter, but lighting stayed good and I felt fine",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_04_08_evening",
+    "segment_id": "seg_04",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-23T12:58:00.000Z",
+    "signal": "Still okay; several pedestrians and open storefronts",
+    "severity": "low",
+    "note": "Still okay; several pedestrians and open storefronts",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_04_09_night",
+    "segment_id": "seg_04",
+    "time_bucket": "night",
+    "timestamp": "2026-06-23T15:54:00.000Z",
+    "signal": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "severity": "high",
+    "note": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_04_10_night",
+    "segment_id": "seg_04",
+    "time_bucket": "night",
+    "timestamp": "2026-06-23T15:55:00.000Z",
+    "signal": "Caution needed - one shadowed section and fast-moving vehicles",
+    "severity": "high",
+    "note": "Caution needed - one shadowed section and fast-moving vehicles",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_04_11_night",
+    "segment_id": "seg_04",
+    "time_bucket": "night",
+    "timestamp": "2026-06-23T15:56:00.000Z",
+    "signal": "Caution needed - one shadowed section and fast-moving vehicles",
+    "severity": "high",
+    "note": "Caution needed - one shadowed section and fast-moving vehicles",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_04_12_night",
+    "segment_id": "seg_04",
+    "time_bucket": "night",
+    "timestamp": "2026-06-23T15:57:00.000Z",
+    "signal": "Took care crossing because the block was dim and nearly empty",
+    "severity": "high",
+    "note": "Took care crossing because the block was dim and nearly empty",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_05_01_morning",
+    "segment_id": "seg_05",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-24T02:36:00.000Z",
+    "signal": "Mostly safe, but one short blind corner near parked scooters",
+    "severity": "medium",
+    "note": "Mostly safe, but one short blind corner near parked scooters",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_05_02_morning",
+    "segment_id": "seg_05",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-24T02:37:00.000Z",
+    "signal": "Clear sight lines and steady foot traffic; comfortable walking",
+    "severity": "low",
+    "note": "Clear sight lines and steady foot traffic; comfortable walking",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_05_03_morning",
+    "segment_id": "seg_05",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-24T02:38:00.000Z",
+    "signal": "Clear sight lines and steady foot traffic; comfortable walking",
+    "severity": "low",
+    "note": "Clear sight lines and steady foot traffic; comfortable walking",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_05_04_afternoon",
+    "segment_id": "seg_05",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-24T08:44:00.000Z",
+    "signal": "Generally fine, though traffic was moving quickly at the intersection",
+    "severity": "medium",
+    "note": "Generally fine, though traffic was moving quickly at the intersection",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_05_05_afternoon",
+    "segment_id": "seg_05",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-24T08:45:00.000Z",
+    "signal": "Well-lit and calm with lots of people around",
+    "severity": "low",
+    "note": "Well-lit and calm with lots of people around",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_05_06_afternoon",
+    "segment_id": "seg_05",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-24T08:46:00.000Z",
+    "signal": "Mostly safe, but one short blind corner near parked scooters",
+    "severity": "medium",
+    "note": "Mostly safe, but one short blind corner near parked scooters",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_05_07_evening",
+    "segment_id": "seg_05",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-24T12:57:00.000Z",
+    "signal": "Some caution near the bus stop, but the block was active",
+    "severity": "medium",
+    "note": "Some caution near the bus stop, but the block was active",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_05_08_evening",
+    "segment_id": "seg_05",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-24T12:58:00.000Z",
+    "signal": "Still okay; several pedestrians and open storefronts",
+    "severity": "low",
+    "note": "Still okay; several pedestrians and open storefronts",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_05_09_night",
+    "segment_id": "seg_05",
+    "time_bucket": "night",
+    "timestamp": "2026-06-24T15:54:00.000Z",
+    "signal": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "severity": "high",
+    "note": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_05_10_night",
+    "segment_id": "seg_05",
+    "time_bucket": "night",
+    "timestamp": "2026-06-24T15:55:00.000Z",
+    "signal": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "severity": "high",
+    "note": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_05_11_night",
+    "segment_id": "seg_05",
+    "time_bucket": "night",
+    "timestamp": "2026-06-24T15:56:00.000Z",
+    "signal": "Unsafe - poor lighting and a dark stretch made the walk uncomfortable",
+    "severity": "high",
+    "note": "Unsafe - poor lighting and a dark stretch made the walk uncomfortable",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_05_12_night",
+    "segment_id": "seg_05",
+    "time_bucket": "night",
+    "timestamp": "2026-06-24T15:57:00.000Z",
+    "signal": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "severity": "high",
+    "note": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_06_01_morning",
+    "segment_id": "seg_06",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-25T02:36:00.000Z",
+    "signal": "Clear sight lines and steady foot traffic; comfortable walking",
+    "severity": "low",
+    "note": "Clear sight lines and steady foot traffic; comfortable walking",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_06_02_morning",
+    "segment_id": "seg_06",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-25T02:37:00.000Z",
+    "signal": "Safe - high visibility, active pedestrian traffic",
+    "severity": "low",
+    "note": "Safe - high visibility, active pedestrian traffic",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_06_03_morning",
+    "segment_id": "seg_06",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-25T02:38:00.000Z",
+    "signal": "Generally fine, though traffic was moving quickly at the intersection",
+    "severity": "medium",
+    "note": "Generally fine, though traffic was moving quickly at the intersection",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_06_04_afternoon",
+    "segment_id": "seg_06",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-25T08:44:00.000Z",
+    "signal": "Safe - high visibility, active pedestrian traffic",
+    "severity": "low",
+    "note": "Safe - high visibility, active pedestrian traffic",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_06_05_afternoon",
+    "segment_id": "seg_06",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-25T08:45:00.000Z",
+    "signal": "Felt safe; shops were open and the street was busy",
+    "severity": "low",
+    "note": "Felt safe; shops were open and the street was busy",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_06_06_afternoon",
+    "segment_id": "seg_06",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-25T08:46:00.000Z",
+    "signal": "Generally fine, though traffic was moving quickly at the intersection",
+    "severity": "medium",
+    "note": "Generally fine, though traffic was moving quickly at the intersection",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_06_07_evening",
+    "segment_id": "seg_06",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-25T12:57:00.000Z",
+    "signal": "A little quieter, but lighting stayed good and I felt fine",
+    "severity": "low",
+    "note": "A little quieter, but lighting stayed good and I felt fine",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_06_08_evening",
+    "segment_id": "seg_06",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-25T12:58:00.000Z",
+    "signal": "Some caution near the bus stop, but the block was active",
+    "severity": "medium",
+    "note": "Some caution near the bus stop, but the block was active",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_06_09_night",
+    "segment_id": "seg_06",
+    "time_bucket": "night",
+    "timestamp": "2026-06-25T15:54:00.000Z",
+    "signal": "Brighter than expected; security guards and other walkers nearby",
+    "severity": "medium",
+    "note": "Brighter than expected; security guards and other walkers nearby",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_06_10_night",
+    "segment_id": "seg_06",
+    "time_bucket": "night",
+    "timestamp": "2026-06-25T15:55:00.000Z",
+    "signal": "Caution needed - one shadowed section and fast-moving vehicles",
+    "severity": "high",
+    "note": "Caution needed - one shadowed section and fast-moving vehicles",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_06_11_night",
+    "segment_id": "seg_06",
+    "time_bucket": "night",
+    "timestamp": "2026-06-25T15:56:00.000Z",
+    "signal": "Took care crossing because the block was dim and nearly empty",
+    "severity": "high",
+    "note": "Took care crossing because the block was dim and nearly empty",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_06_12_night",
+    "segment_id": "seg_06",
+    "time_bucket": "night",
+    "timestamp": "2026-06-25T15:57:00.000Z",
+    "signal": "Felt okay because the road was lit and there was steady movement",
+    "severity": "medium",
+    "note": "Felt okay because the road was lit and there was steady movement",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_07_01_morning",
+    "segment_id": "seg_07",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-26T02:36:00.000Z",
+    "signal": "Clear sight lines and steady foot traffic; comfortable walking",
+    "severity": "low",
+    "note": "Clear sight lines and steady foot traffic; comfortable walking",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_07_02_morning",
+    "segment_id": "seg_07",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-26T02:37:00.000Z",
+    "signal": "Mostly safe, but one short blind corner near parked scooters",
+    "severity": "medium",
+    "note": "Mostly safe, but one short blind corner near parked scooters",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_07_03_morning",
+    "segment_id": "seg_07",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-26T02:38:00.000Z",
+    "signal": "Generally fine, though traffic was moving quickly at the intersection",
+    "severity": "medium",
+    "note": "Generally fine, though traffic was moving quickly at the intersection",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_07_04_afternoon",
+    "segment_id": "seg_07",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-26T08:44:00.000Z",
+    "signal": "Mostly safe, but one short blind corner near parked scooters",
+    "severity": "medium",
+    "note": "Mostly safe, but one short blind corner near parked scooters",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_07_05_afternoon",
+    "segment_id": "seg_07",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-26T08:45:00.000Z",
+    "signal": "Well-lit and calm with lots of people around",
+    "severity": "low",
+    "note": "Well-lit and calm with lots of people around",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_07_06_afternoon",
+    "segment_id": "seg_07",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-26T08:46:00.000Z",
+    "signal": "Safe - high visibility, active pedestrian traffic",
+    "severity": "low",
+    "note": "Safe - high visibility, active pedestrian traffic",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_07_07_evening",
+    "segment_id": "seg_07",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-26T12:57:00.000Z",
+    "signal": "Still okay; several pedestrians and open storefronts",
+    "severity": "low",
+    "note": "Still okay; several pedestrians and open storefronts",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_07_08_evening",
+    "segment_id": "seg_07",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-26T12:58:00.000Z",
+    "signal": "A little quieter, but lighting stayed good and I felt fine",
+    "severity": "low",
+    "note": "A little quieter, but lighting stayed good and I felt fine",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_07_09_night",
+    "segment_id": "seg_07",
+    "time_bucket": "night",
+    "timestamp": "2026-06-26T15:54:00.000Z",
+    "signal": "Caution needed - one shadowed section and fast-moving vehicles",
+    "severity": "high",
+    "note": "Caution needed - one shadowed section and fast-moving vehicles",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_07_10_night",
+    "segment_id": "seg_07",
+    "time_bucket": "night",
+    "timestamp": "2026-06-26T15:55:00.000Z",
+    "signal": "Took care crossing because the block was dim and nearly empty",
+    "severity": "high",
+    "note": "Took care crossing because the block was dim and nearly empty",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_07_11_night",
+    "segment_id": "seg_07",
+    "time_bucket": "night",
+    "timestamp": "2026-06-26T15:56:00.000Z",
+    "signal": "Caution needed - one shadowed section and fast-moving vehicles",
+    "severity": "high",
+    "note": "Caution needed - one shadowed section and fast-moving vehicles",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_07_12_night",
+    "segment_id": "seg_07",
+    "time_bucket": "night",
+    "timestamp": "2026-06-26T15:57:00.000Z",
+    "signal": "Caution needed - one shadowed section and fast-moving vehicles",
+    "severity": "high",
+    "note": "Caution needed - one shadowed section and fast-moving vehicles",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_08_01_morning",
+    "segment_id": "seg_08",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-27T02:36:00.000Z",
+    "signal": "Well-lit and calm with lots of people around",
+    "severity": "low",
+    "note": "Well-lit and calm with lots of people around",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_08_02_morning",
+    "segment_id": "seg_08",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-27T02:37:00.000Z",
+    "signal": "Safe - high visibility, active pedestrian traffic",
+    "severity": "low",
+    "note": "Safe - high visibility, active pedestrian traffic",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_08_03_morning",
+    "segment_id": "seg_08",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-27T02:38:00.000Z",
+    "signal": "Well-lit and calm with lots of people around",
+    "severity": "low",
+    "note": "Well-lit and calm with lots of people around",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_08_04_afternoon",
+    "segment_id": "seg_08",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-27T08:44:00.000Z",
+    "signal": "Felt safe; shops were open and the street was busy",
+    "severity": "low",
+    "note": "Felt safe; shops were open and the street was busy",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_08_05_afternoon",
+    "segment_id": "seg_08",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-27T08:45:00.000Z",
+    "signal": "Well-lit and calm with lots of people around",
+    "severity": "low",
+    "note": "Well-lit and calm with lots of people around",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_08_06_afternoon",
+    "segment_id": "seg_08",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-27T08:46:00.000Z",
+    "signal": "Felt safe; shops were open and the street was busy",
+    "severity": "low",
+    "note": "Felt safe; shops were open and the street was busy",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_08_07_evening",
+    "segment_id": "seg_08",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-27T12:57:00.000Z",
+    "signal": "Still okay; several pedestrians and open storefronts",
+    "severity": "low",
+    "note": "Still okay; several pedestrians and open storefronts",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_08_08_evening",
+    "segment_id": "seg_08",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-27T12:58:00.000Z",
+    "signal": "A little quieter, but lighting stayed good and I felt fine",
+    "severity": "low",
+    "note": "A little quieter, but lighting stayed good and I felt fine",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_08_09_night",
+    "segment_id": "seg_08",
+    "time_bucket": "night",
+    "timestamp": "2026-06-27T15:54:00.000Z",
+    "signal": "Felt okay because the road was lit and there was steady movement",
+    "severity": "medium",
+    "note": "Felt okay because the road was lit and there was steady movement",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_08_10_night",
+    "segment_id": "seg_08",
+    "time_bucket": "night",
+    "timestamp": "2026-06-27T15:55:00.000Z",
+    "signal": "Unsafe - poor lighting and a dark stretch made the walk uncomfortable",
+    "severity": "high",
+    "note": "Unsafe - poor lighting and a dark stretch made the walk uncomfortable",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_08_11_night",
+    "segment_id": "seg_08",
+    "time_bucket": "night",
+    "timestamp": "2026-06-27T15:56:00.000Z",
+    "signal": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "severity": "high",
+    "note": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_08_12_night",
+    "segment_id": "seg_08",
+    "time_bucket": "night",
+    "timestamp": "2026-06-27T15:57:00.000Z",
+    "signal": "Felt okay because the road was lit and there was steady movement",
+    "severity": "medium",
+    "note": "Felt okay because the road was lit and there was steady movement",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_09_01_morning",
+    "segment_id": "seg_09",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-28T02:36:00.000Z",
+    "signal": "Mostly safe, but one short blind corner near parked scooters",
+    "severity": "medium",
+    "note": "Mostly safe, but one short blind corner near parked scooters",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_09_02_morning",
+    "segment_id": "seg_09",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-28T02:37:00.000Z",
+    "signal": "Safe - high visibility, active pedestrian traffic",
+    "severity": "low",
+    "note": "Safe - high visibility, active pedestrian traffic",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_09_03_morning",
+    "segment_id": "seg_09",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-28T02:38:00.000Z",
+    "signal": "Safe - high visibility, active pedestrian traffic",
+    "severity": "low",
+    "note": "Safe - high visibility, active pedestrian traffic",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_09_04_afternoon",
+    "segment_id": "seg_09",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-28T08:44:00.000Z",
+    "signal": "Well-lit and calm with lots of people around",
+    "severity": "low",
+    "note": "Well-lit and calm with lots of people around",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_09_05_afternoon",
+    "segment_id": "seg_09",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-28T08:45:00.000Z",
+    "signal": "Safe - high visibility, active pedestrian traffic",
+    "severity": "low",
+    "note": "Safe - high visibility, active pedestrian traffic",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_09_06_afternoon",
+    "segment_id": "seg_09",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-28T08:46:00.000Z",
+    "signal": "Felt safe; shops were open and the street was busy",
+    "severity": "low",
+    "note": "Felt safe; shops were open and the street was busy",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_09_07_evening",
+    "segment_id": "seg_09",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-28T12:57:00.000Z",
+    "signal": "Still okay; several pedestrians and open storefronts",
+    "severity": "low",
+    "note": "Still okay; several pedestrians and open storefronts",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_09_08_evening",
+    "segment_id": "seg_09",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-28T12:58:00.000Z",
+    "signal": "Some caution near the bus stop, but the block was active",
+    "severity": "medium",
+    "note": "Some caution near the bus stop, but the block was active",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_09_09_night",
+    "segment_id": "seg_09",
+    "time_bucket": "night",
+    "timestamp": "2026-06-28T15:54:00.000Z",
+    "signal": "Caution needed - one shadowed section and fast-moving vehicles",
+    "severity": "high",
+    "note": "Caution needed - one shadowed section and fast-moving vehicles",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_09_10_night",
+    "segment_id": "seg_09",
+    "time_bucket": "night",
+    "timestamp": "2026-06-28T15:55:00.000Z",
+    "signal": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "severity": "high",
+    "note": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_09_11_night",
+    "segment_id": "seg_09",
+    "time_bucket": "night",
+    "timestamp": "2026-06-28T15:56:00.000Z",
+    "signal": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "severity": "high",
+    "note": "Uneasy near the corner; lighting dropped off and traffic felt sparse",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_09_12_night",
+    "segment_id": "seg_09",
+    "time_bucket": "night",
+    "timestamp": "2026-06-28T15:57:00.000Z",
+    "signal": "Brighter than expected; security guards and other walkers nearby",
+    "severity": "medium",
+    "note": "Brighter than expected; security guards and other walkers nearby",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_10_01_morning",
+    "segment_id": "seg_10",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-29T02:36:00.000Z",
+    "signal": "Safe - high visibility, active pedestrian traffic",
+    "severity": "low",
+    "note": "Safe - high visibility, active pedestrian traffic",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_10_02_morning",
+    "segment_id": "seg_10",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-29T02:37:00.000Z",
+    "signal": "Safe - high visibility, active pedestrian traffic",
+    "severity": "low",
+    "note": "Safe - high visibility, active pedestrian traffic",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_10_03_morning",
+    "segment_id": "seg_10",
+    "time_bucket": "morning",
+    "timestamp": "2026-06-29T02:38:00.000Z",
+    "signal": "Generally fine, though traffic was moving quickly at the intersection",
+    "severity": "medium",
+    "note": "Generally fine, though traffic was moving quickly at the intersection",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_10_04_afternoon",
+    "segment_id": "seg_10",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-29T08:44:00.000Z",
+    "signal": "Felt safe; shops were open and the street was busy",
+    "severity": "low",
+    "note": "Felt safe; shops were open and the street was busy",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_10_05_afternoon",
+    "segment_id": "seg_10",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-29T08:45:00.000Z",
+    "signal": "Generally fine, though traffic was moving quickly at the intersection",
+    "severity": "medium",
+    "note": "Generally fine, though traffic was moving quickly at the intersection",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_10_06_afternoon",
+    "segment_id": "seg_10",
+    "time_bucket": "afternoon",
+    "timestamp": "2026-06-29T08:46:00.000Z",
+    "signal": "Well-lit and calm with lots of people around",
+    "severity": "low",
+    "note": "Well-lit and calm with lots of people around",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_10_07_evening",
+    "segment_id": "seg_10",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-29T12:57:00.000Z",
+    "signal": "Some caution near the bus stop, but the block was active",
+    "severity": "medium",
+    "note": "Some caution near the bus stop, but the block was active",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_10_08_evening",
+    "segment_id": "seg_10",
+    "time_bucket": "evening",
+    "timestamp": "2026-06-29T12:58:00.000Z",
+    "signal": "Still okay; several pedestrians and open storefronts",
+    "severity": "low",
+    "note": "Still okay; several pedestrians and open storefronts",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_10_09_night",
+    "segment_id": "seg_10",
+    "time_bucket": "night",
+    "timestamp": "2026-06-29T15:54:00.000Z",
+    "signal": "Felt okay because the road was lit and there was steady movement",
+    "severity": "medium",
+    "note": "Felt okay because the road was lit and there was steady movement",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_10_10_night",
+    "segment_id": "seg_10",
+    "time_bucket": "night",
+    "timestamp": "2026-06-29T15:55:00.000Z",
+    "signal": "Unsafe - poor lighting and a dark stretch made the walk uncomfortable",
+    "severity": "high",
+    "note": "Unsafe - poor lighting and a dark stretch made the walk uncomfortable",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_10_11_night",
+    "segment_id": "seg_10",
+    "time_bucket": "night",
+    "timestamp": "2026-06-29T15:56:00.000Z",
+    "signal": "Felt okay because the road was lit and there was steady movement",
+    "severity": "medium",
+    "note": "Felt okay because the road was lit and there was steady movement",
+    "left_light": "Stay safe out there!"
+  },
+  {
+    "report_id": "pune_10_12_night",
+    "segment_id": "seg_10",
+    "time_bucket": "night",
+    "timestamp": "2026-06-29T15:57:00.000Z",
+    "signal": "Unsafe - poor lighting and a dark stretch made the walk uncomfortable",
+    "severity": "high",
+    "note": "Unsafe - poor lighting and a dark stretch made the walk uncomfortable",
+    "left_light": "Stay safe out there!"
   }
 ];
 
