@@ -14,9 +14,37 @@ SafeRaste is a mobile-first Progressive Web App (PWA) designed to provide dynami
 ## Technology Stack
 
 - **Frontend:** React, Vite, Leaflet, Vanilla CSS
-- **Backend API:** Python, FastAPI, Cognee SDK
-- **Memory Layer:** Cognee Cloud (knowledge graph + vector store)
+- **Backend API:** Python FastAPI hosted on **Vercel Serverless Functions**
+- **Memory Layer:** Cognee Cloud Knowledge Graph (via lightweight HTTPX REST integration to bypass Vercel serverless size limits)
 - **Routing Data:** OpenStreetMap Routing (OSRM)
+
+## Architecture
+
+```mermaid
+graph TD
+    A[React / Vite Frontend] -->|HTTP POST| B[Vercel Serverless Function <br> fastapi api/index.py]
+    B -->|HTTPX REST API| C{Cognee Cloud}
+    
+    C -->|/api/v1/remember| D[(Knowledge Graph)]
+    C -->|/api/v1/recall| D
+    
+    D -.-> E[StreetSegment Node]
+    D -.-> F[Report Node]
+    D -.-> G[TimeOfDayBucket Node]
+    
+    E --- F
+    F --- G
+    
+    classDef frontend fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:#fff;
+    classDef serverless fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff;
+    classDef cognee fill:#10b981,stroke:#047857,stroke-width:2px,color:#fff;
+    classDef graphdb fill:#f59e0b,stroke:#b45309,stroke-width:2px,color:#fff;
+    
+    class A frontend;
+    class B serverless;
+    class C cognee;
+    class D graphdb;
+```
 
 ## Getting Started
 
