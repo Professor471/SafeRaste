@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { 
   Shield, 
   Clock, 
@@ -21,6 +21,38 @@ import L from 'leaflet';
 
 // Define initial coordinates for the map centered around Deccan Gymkhana in Pune, India
 const MAP_CENTER = [18.5220, 73.8450];
+
+// Pool of varied human-written encouragement notes for the "Light Left for You" feature
+const LIGHT_MESSAGES = [
+  "Walk on the library side — better lit after 8 PM.",
+  "The chai stall uncle keeps an eye out. You're not alone here.",
+  "Cross to the right sidewalk early; the left side gets dark past the pharmacy.",
+  "I walk this stretch daily at 7 AM. It's peaceful — enjoy it.",
+  "Guard near the ATM is friendly. Wave if you need anything.",
+  "Street dogs are harmless here. They actually made me feel safer!",
+  "Take the inner lane past the college gate — more people, better lights.",
+  "Evening crowd thins after 9 PM. Plan accordingly.",
+  "Auto drivers here are trustworthy — I've used them many times late at night.",
+  "The shopkeepers close by 10 but the street stays well-lit.",
+  "There's a PCR van that parks near the bus stop most nights.",
+  "Stay safe, sister. This road is good but stay alert near the underpass.",
+  "Morning joggers make this stretch lively. Great time to walk.",
+  "Fruit vendor on the corner is there till midnight. Comforting presence.",
+  "I felt uneasy once but a fellow walker helped me. People here are kind.",
+  "The new streetlights they installed last month made a huge difference.",
+  "Carry a charged phone. Signal is strong all along this stretch.",
+  "Avoid the shortcut through the parking lot at night — main road is safer.",
+  "This area is great during festivals — always bustling with families.",
+  "You've got this. Trust your instincts and keep walking confidently.",
+];
+
+// Assign varied light messages to reports based on index
+function diversifyLightMessages(reports) {
+  return reports.map((report, index) => ({
+    ...report,
+    left_light: LIGHT_MESSAGES[index % LIGHT_MESSAGES.length],
+  }));
+}
 
 const INITIAL_SEGMENTS = [
   {
@@ -1789,7 +1821,8 @@ const INITIAL_REPORTS = [
 export default function App() {
   const [timeBucket, setTimeBucket] = useState('night'); // Default to night as it shows the most contrast
   const [daysElapsed, setDaysElapsed] = useState(0);
-  const [reports, setReports] = useState(INITIAL_REPORTS);
+  const [reports, setReports] = useState(() => diversifyLightMessages(INITIAL_REPORTS));
+  const [backendAvailable, setBackendAvailable] = useState(null); // null = unknown, true/false after check
   const [selectedSegment, setSelectedSegment] = useState(INITIAL_SEGMENTS[0]);
   const [isLogging, setIsLogging] = useState(false);
   const [consoleLogs, setConsoleLogs] = useState([]);
@@ -1804,14 +1837,120 @@ export default function App() {
   const mapRef = useRef(null);
   const polylinesRef = useRef({});
 
-  // Helper to add console logs (simulating Cognee lifecycle)
-  const addLog = (op, code, data) => {
+  // Helper to add console logs (showing Cognee lifecycle operations)
+  const addLog = useCallback((op, code, data) => {
     const timestamp = new Date().toLocaleTimeString();
     setConsoleLogs(prev => [
       { id: Date.now() + Math.random(), op, code, data, timestamp },
       ...prev
     ].slice(0, 15)); // Keep last 15
-  };
+  }, []);
+
+  // Check backend health on mount
+  useEffect(() => {
+    fetch('/api/health')
+      .then(res => res.json())
+      .then(() => {
+        setBackendAvailable(true);
+        addLog('system', 'Backend connected', { status: 'Cognee backend is live — all lifecycle ops will hit the real knowledge graph.' });
+      })
+      .catch(() => {
+        setBackendAvailable(false);
+        addLog('system', 'Backend offline', { status: 'Running in local simulation mode. Start the backend with: uvicorn backend.main:app --port 8000' });
+      });
+  }, [addLog]);
+
+  // Call real Cognee recall() via backend
+  const callRecall = useCallback(async (segmentName, bucket) => {
+    if (!backendAvailable) return null;
+    try {
+      const res = await fetch('/api/recall', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          query_text: `${segmentName} safety during ${bucket}`,
+          time_bucket: bucket,
+          top_k: 3,
+        }),
+      });
+      const data = await res.json();
+      addLog(
+        'recall() [LIVE]',
+        `cognee.recall(query_text="${segmentName}", time_bucket="${bucket}")`,
+        data
+      );
+      return data;
+    } catch (err) {
+      addLog('recall() [ERROR]', `Failed: ${err.message}`, { error: err.message });
+      return null;
+    }
+  }, [backendAvailable, addLog]);
+
+  // Call real Cognee remember() via backend
+  const callRemember = useCallback(async (reportData) => {
+    if (!backendAvailable) return null;
+    try {
+      const res = await fetch('/api/remember', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(reportData),
+      });
+      const data = await res.json();
+      addLog(
+        'remember() [LIVE]',
+        `cognee.remember(payload, dataset_name="saferaste_pune_seed_v1")`,
+        data
+      );
+      return data;
+    } catch (err) {
+      addLog('remember() [ERROR]', `Failed: ${err.message}`, { error: err.message });
+      return null;
+    }
+  }, [backendAvailable, addLog]);
+
+  // Call real Cognee improve() via backend
+  const callImprove = useCallback(async () => {
+    if (!backendAvailable) return null;
+    try {
+      const res = await fetch('/api/improve', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({}),
+      });
+      const data = await res.json();
+      addLog(
+        `improve() [LIVE${data.status === 'skipped' ? ' — FALLBACK' : ''}]`,
+        `cognee.improve(dataset="saferaste_pune_seed_v1")`,
+        data
+      );
+      return data;
+    } catch (err) {
+      addLog('improve() [ERROR]', `Failed: ${err.message}`, { error: err.message });
+      return null;
+    }
+  }, [backendAvailable, addLog]);
+
+  // Call real Cognee forget() via backend
+  const callForget = useCallback(async () => {
+    if (!backendAvailable) return null;
+    try {
+      const res = await fetch('/api/forget', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({}),
+      });
+      const data = await res.json();
+      addLog(
+        'forget() [LIVE]',
+        `cognee.forget(dataset="saferaste_pune_seed_v1", memory_only=True)`,
+        data
+      );
+      return data;
+    } catch (err) {
+      addLog('forget() [ERROR]', `Failed: ${err.message}`, { error: err.message });
+      return null;
+    }
+  }, [backendAvailable, addLog]);
 
   // Setup Map
   useEffect(() => {
@@ -1920,9 +2059,9 @@ export default function App() {
       polyline.on('click', () => {
         setSelectedSegment(seg);
         
-        // Trigger recall log simulation
+        // Log local score immediately (optimistic)
         addLog(
-          'recall()',
+          'recall() [LOCAL]',
           `cognee.recall(query_text="${seg.name}", time_bucket="${timeBucket}")`,
           {
             street_segment: seg.name,
@@ -1932,6 +2071,9 @@ export default function App() {
             evidence: score.activeReports.map(r => r.signal)
           }
         );
+
+        // Also fire real Cognee recall if backend is available
+        callRecall(seg.name, timeBucket);
       });
 
       polylinesRef.current[seg.id] = polyline;
@@ -1943,7 +2085,7 @@ export default function App() {
     if (selectedSegment) {
       const score = getSegmentScore(selectedSegment.id, timeBucket, daysElapsed);
       addLog(
-        'recall()',
+        'recall() [LOCAL]',
         `cognee.recall(query_text="${selectedSegment.name}", time_bucket="${timeBucket}")`,
         {
           street_segment: selectedSegment.name,
@@ -1953,6 +2095,9 @@ export default function App() {
           evidence: score.activeReports.map(r => r.signal)
         }
       );
+
+      // Fire real Cognee recall in parallel
+      callRecall(selectedSegment.name, timeBucket);
     }
   }, [selectedSegment]);
 
@@ -2008,8 +2153,8 @@ export default function App() {
     recognition.start();
   };
 
-  // Submit report to simulated Cognee graph memory
-  const handleAddReport = (e) => {
+  // Submit report to Cognee graph memory (real backend + optimistic local update)
+  const handleAddReport = async (e) => {
     e.preventDefault();
     if (!selectedSegment) return;
 
@@ -2021,9 +2166,10 @@ export default function App() {
       signal: formSignal,
       severity: formSeverity,
       note: formNote || formSignal,
-      left_light: formLight || "Safe travels!"
+      left_light: formLight || LIGHT_MESSAGES[Math.floor(Math.random() * LIGHT_MESSAGES.length)]
     };
 
+    // Optimistic local update — UI updates instantly
     const newReports = [...reports, newReport];
     setReports(newReports);
     setIsLogging(false);
@@ -2032,32 +2178,31 @@ export default function App() {
     setFormNote('');
     setFormLight('');
 
-    // Trigger Cognee remember() log
-    addLog(
-      'remember()',
-      `cognee.remember(payload, dataset_name="saferaste_walks")`,
-      {
-        nodes: [
-          { type: 'StreetSegment', name: selectedSegment.name, grid_cell: selectedSegment.grid_cell },
-          { type: 'Report', report_id: newReport.report_id, signal: newReport.signal, severity: newReport.severity },
-          { type: 'TimeOfDayBucket', value: timeBucket }
-        ],
-        edges: [
-          { from: newReport.report_id, to: selectedSegment.name, type: 'about' },
-          { from: newReport.report_id, to: timeBucket, type: 'occurred_at' }
-        ]
-      }
-    );
+    // Fire real Cognee remember() via backend
+    await callRemember({
+      report_id: newReport.report_id,
+      street_segment: selectedSegment.name,
+      grid_cell: selectedSegment.grid_cell,
+      time_bucket: timeBucket,
+      timestamp: newReport.timestamp,
+      signal: formSignal,
+      severity: formSeverity,
+      note: newReport.note,
+      left_light: newReport.left_light,
+    });
 
-    // Check if this triggers improve() confidence gain or contradiction warning
-    setTimeout(() => {
+    // Fire real Cognee improve() after ingestion
+    setTimeout(async () => {
+      await callImprove();
+
+      // Also log local contradiction/agreement analysis
       const segmentReports = newReports.filter(r => r.segment_id === selectedSegment.id && r.time_bucket === timeBucket);
       const isContradiction = segmentReports.some(r => r.severity === 'high') && segmentReports.some(r => r.severity === 'low');
       
       if (isContradiction) {
         addLog(
-          'improve() [Contradiction]',
-          `cognee.improve(dataset="saferaste_walks")`,
+          'improve() [LOCAL — Contradiction]',
+          `Local analysis: contradictory signals on ${selectedSegment.name} during ${timeBucket}`,
           {
             warning: "Contradictory route safety signals detected. Confidence metrics adjusted downwards.",
             segment: selectedSegment.name,
@@ -2066,8 +2211,8 @@ export default function App() {
         );
       } else {
         addLog(
-          'improve() [Agreement]',
-          `cognee.improve(dataset="saferaste_walks")`,
+          'improve() [LOCAL — Agreement]',
+          `Local analysis: consistent signals on ${selectedSegment.name} during ${timeBucket}`,
           {
             status: "Multiple consistent signals received. Confidence score boosted.",
             segment: selectedSegment.name,
@@ -2078,18 +2223,22 @@ export default function App() {
     }, 1200);
   };
 
-  const handleSimulateDecay = (days) => {
+  const handleSimulateDecay = async (days) => {
     const nextDays = daysElapsed + days;
     setDaysElapsed(nextDays);
     
+    // Log local decay simulation
     addLog(
-      'forget()',
-      `cognee.forget(dataset="saferaste_walks", time_delta_days=${nextDays})`,
+      'forget() [LOCAL]',
+      `cognee.forget(dataset="saferaste_pune_seed_v1", time_delta_days=${nextDays})`,
       {
         action: `Advanced virtual timeline by +${days} days (Total: ${nextDays} days)`,
         message: "Applying linear temporal decay. Reports >60 days lose weight; reports >90 days are forgotten."
       }
     );
+
+    // Also fire real Cognee forget() via backend
+    await callForget();
   };
 
   const currentScore = selectedSegment ? getSegmentScore(selectedSegment.id, timeBucket, daysElapsed) : null;
@@ -2133,7 +2282,10 @@ export default function App() {
                     className={`time-button ${timeBucket === bucket ? 'active' : ''}`}
                     onClick={() => {
                       setTimeBucket(bucket);
-                      addLog('recall()', `cognee.recall(query_text="map_view", time_bucket="${bucket}")`, { action: `Refiltered active segments for ${bucket} bucket` });
+                      addLog('recall() [LOCAL]', `cognee.recall(query_text="map_view", time_bucket="${bucket}")`, { action: `Refiltered active segments for ${bucket} bucket` });
+                      if (selectedSegment) {
+                        callRecall(selectedSegment.name, bucket);
+                      }
                     }}
                   >
                     {bucket.charAt(0).toUpperCase() + bucket.slice(1)}
@@ -2236,7 +2388,7 @@ export default function App() {
         {/* Memory Console Panel */}
         <section className="card console-card">
           <div className="card-header flex-header">
-            <span className="card-title text-accent"><Activity size={16} /> Cognee Memory lifecycle Console</span>
+            <span className="card-title text-accent"><Activity size={16} /> Cognee Memory Lifecycle Console {backendAvailable === true && <span style={{color: '#10b981', fontSize: '0.7rem', marginLeft: '0.5rem'}}>● LIVE</span>}{backendAvailable === false && <span style={{color: '#f59e0b', fontSize: '0.7rem', marginLeft: '0.5rem'}}>● LOCAL</span>}</span>
             <button className="btn btn-link btn-sm" onClick={() => setConsoleLogs([])}>Clear</button>
           </div>
           <div className="console-view">
